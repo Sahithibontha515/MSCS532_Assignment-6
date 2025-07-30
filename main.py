@@ -1,0 +1,63 @@
+from Array import Array
+from Matrix import Matrix
+from StackAndQueue import Stack, Queue
+from LinkedList import SinglyLinkedList
+
+print("==== Testing Array ====")
+arr = Array()
+arr.insert(0, 10)
+arr.insert(1, 20)
+arr.insert(1, 15)
+print("Array Contents:", arr.data)
+print("Access index 1:", arr.get(1))
+arr.delete(1)
+print("After Deletion:", arr.data)
+
+print("\n==== Testing Matrix ====")
+mat = Matrix(2, 2)
+mat.insert(0, 0, 1)
+mat.insert(0, 1, 2)
+mat.insert(1, 0, 3)
+mat.insert(1, 1, 4)
+print("Matrix:")
+for row in mat.data:
+    print(row)
+print("Access [1][1]:", mat.access(1, 1))
+mat.delete(1, 1)
+print("After Deletion [1][1]:", mat.access(1, 1))
+
+print("\n==== Testing Stack ====")
+stack = Stack()
+stack.push(5)
+stack.push(10)
+print("Top of Stack:", stack.peek())
+print("Popped:", stack.pop())
+print("Stack is empty:", stack.is_empty())
+
+print("\n==== Testing Queue ====")
+queue = Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+print("Dequeued:", queue.dequeue())
+print("Queue Empty:", queue.is_empty())
+
+print("\n==== Testing Singly Linked List ====")
+ll = SinglyLinkedList()
+ll.insert_at_end(10)
+ll.insert_at_end(20)
+ll.insert_at_end(30)
+print("Linked List Traversal:", ll.traverse())
+ll.delete(20)
+print("After Deleting 20:", ll.traverse())
+
+# print("\n==== Testing Rooted Tree ====")
+# root = TreeNode("A")
+# b = TreeNode("B")
+# c = TreeNode("C")
+# d = TreeNode("D")
+# root.add_child(b)
+# root.add_child(c)
+# b.add_child(d)
+# print("Tree Structure:")
+# root.print_tree()
